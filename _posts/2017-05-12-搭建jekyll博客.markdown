@@ -6,11 +6,11 @@ categories: 其他
 tag: 其他知识
 ---
 
-本文主要记载了搭建jekyll的过程，主要参考了[leopardpan的文章](baixin.io/2016/10/jekyll_tutorials1/).但是又碰到了属于自己的问题，所以这里记录一下，方便他人以及日后查看。\
+本文主要记载了搭建jekyll的过程，主要参考了[leopardpan的文章](baixin.io/2016/10/jekyll_tutorials1/).但是又碰到了属于自己的问题，所以这里记录一下，方便他人以及日后查看。  
 PS：我的是安装在Mac上的。
 
 ### 开始
-- jekyll
+- jekyll  
 ```
 gem install jekyll 
 ```
@@ -32,6 +32,40 @@ jekyll serve
 ```
 然后在浏览器里面输入[http://localhost:4000](http://localhost:4000),就可以看到博客效果了。
 
-- github pages\
-上面只是看到了本地效果，我们需要将博客系统部署到远端。这里我们利用github pages来部署。\
+- github pages  
+上面只是看到了本地效果，我们需要将博客系统部署到远端。这里我们利用github pages来部署。
 在github创建了一个repository，按照教程发现走不下去了。后面又参考了下[github pages官方指导教程](https://pages.github.com/),终于成功创建了myusername.github.io。
+
+- 部署到远端  
+将myBlog下的所有内容push到myusername.github.io仓库里。注意这个地方是将myBlog文件夹下面的内容，并不包括myBlog。一开始的时候我理解错误，将myBlog整个文件夹都push上去了。  
+但是这里如果在浏览器输入
+```
+myusername.github.io
+```，效果跟之前的还是一样的，因为默认打开的就是index.html。需要配置_config.yml文件。
+
+- 博客模板
+博客模板直接使用的是leopardpan的模板，按照教程是直接将文件直接拷贝到对应的文件夹下。Gemfile和Gemfile.lock我没有替换，后面就导致了一个问题，在后面的问题板块进行说明。然后在执行
+```
+jekyll serve
+```
+的时候，报错了。
+
+### 遇到的问题
+- 替换模板的时候，在执行jekyll serve的时候，报错：  
+```
+It looks like you don't have jekyll-paginate or one of its dependencies installed.....
+```
+在stackoverflow和baidu上搜到的方案：
+	- gem install jekyll-paginate
+	- sudo uninstall jekyll,有可能安装了几个版本的jekyll，选择一个版本删除。  
+	但是都没有能够解决问题，最后修改了Gemfile，添加了一行
+	```
+	gem 'jekyll-paginate'
+	```  
+	同理，jekyll-sitemap也是如此解决。
+
+- 去掉打赏功能  
+打赏按钮默认的是大神的二维码，而且这个功能暂时也用不到，就准备去掉。  
+查看网页源代码，发现是叫content\_play，找了很多文件都没有找到这个命名，最后在new\_old.html文件中找到，将前面一段话屏蔽掉就ok了。另外，大神的博客上也有提交记录，根据提交记录也能知道就是这段话。
+- 自己的域名
+看大神的博客，进他的博客输入的是baixin.io，而不是leopardpan.github.io。原因是我还没有自己的域名，在CNAME文件中进行配置的。
