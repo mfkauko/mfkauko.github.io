@@ -4,22 +4,19 @@ title:  "PullLoadRecyclerView"
 date:   2017-05-11 17:23:23 +0800
 categories: Android
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+### 使用方法：
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+- Activity中添加以下代码就可以直接使用：
+mLayout.addHeaderView(mHeaderView, DisplayUtil.dpToPx(MainActivity.this, 60));
+mLayout.addFooterView(mFooterView, DisplayUtil.dpToPx(MainActivity.this, 40));
+mLayout.setMyRecyclerView(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false),
+        mAdapter, true);
+mLayout.addOnTouchUpListener(this);
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+- 下拉刷新和上拉加载的处理，只需要重写方法：
+void onDataRefreshing();
+void onDataLoadingMore();
+完成后记得调用函数：
+void onRefreshFinish(boolean);
+void onLoadMoreFinish(boolean);
+### 注：只是一个简单的能实现功能的Demo，可以在此基础上进行很多修改，自己的项目中已经封装集成了。这里只是提供了一个快速的实现方法。
