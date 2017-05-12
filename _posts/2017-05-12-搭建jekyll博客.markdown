@@ -6,7 +6,7 @@ categories: 其他
 tag: 其他知识
 ---
 
-本文主要记载了搭建jekyll的过程，主要参考了[leopardpan的文章](baixin.io/2016/10/jekyll_tutorials1/).但是又碰到了属于自己的问题，所以这里记录一下，方便他人以及日后查看。  
+本文主要记载了搭建jekyll的过程，主要参考了[leopardpan的文章](baixin.io/2016/10/jekyll_tutorials1/)。但是又碰到了属于自己的问题，所以这里记录一下，方便他人以及日后查看。  
 PS：我的是安装在Mac上的。
 
 ### 开始
@@ -43,7 +43,7 @@ jekyll serve
 myusername.github.io
 ```，效果跟之前的还是一样的，因为默认打开的就是index.html。需要配置_config.yml文件。
 
-- 博客模板
+- 博客模板  
 博客模板直接使用的是leopardpan的模板，按照教程是直接将文件直接拷贝到对应的文件夹下。Gemfile和Gemfile.lock我没有替换，后面就导致了一个问题，在后面的问题板块进行说明。然后在执行
 ```
 jekyll serve
@@ -51,7 +51,8 @@ jekyll serve
 的时候，报错了。
 
 ### 遇到的问题
-- 替换模板的时候，在执行jekyll serve的时候，报错：  
+- 替换模板  
+在执行jekyll serve的时候，报错：  
 ```
 It looks like you don't have jekyll-paginate or one of its dependencies installed.....
 ```
@@ -67,5 +68,5 @@ It looks like you don't have jekyll-paginate or one of its dependencies installe
 - 去掉打赏功能  
 打赏按钮默认的是大神的二维码，而且这个功能暂时也用不到，就准备去掉。  
 查看网页源代码，发现是叫content\_play，找了很多文件都没有找到这个命名，最后在new\_old.html文件中找到，将前面一段话屏蔽掉就ok了。另外，大神的博客上也有提交记录，根据提交记录也能知道就是这段话。
-- 自己的域名
+- 自己的域名  
 看大神的博客，进他的博客输入的是baixin.io，而不是leopardpan.github.io。原因是我还没有自己的域名，在CNAME文件中进行配置的。
