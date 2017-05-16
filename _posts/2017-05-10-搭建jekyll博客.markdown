@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "搭建jekyll博客"
-date:   2017-05-12 10:52:30 +0800
+date:   2017-05-10 10:52:30 +0800
 categories: 其他
 tag: 其他知识
 ---
