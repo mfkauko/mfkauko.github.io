@@ -44,5 +44,6 @@ position - getHeadersCount()
 查询数据也使用
 ```
 sqliteDB.query(SQLiteDatabase db，String[] columns, String selection, String[] selectArgs, String groupBy, String having, String orderBy);
-```并没有使用第三方的框架，性能问题待考虑。
+```
+并没有使用第三方的框架，性能问题待考虑。
 	
