@@ -3,7 +3,7 @@ layout: post
 title:  "PullLoadRecyclerView"
 date:   2017-05-11 17:23:23 +0800
 categories: Android
-tag: Android通用开发
+tag: Android开发
 ---
 
 本文主要是实现下拉刷新和上拉加载更多。项目中本来使用了PullableListView实现了类似的功能，但是RecyclerView一直还没有被运用到项目中，同时为了更加熟悉RecyclerView相关知识，所以就用RecyclerView也实现了类似功能。  
