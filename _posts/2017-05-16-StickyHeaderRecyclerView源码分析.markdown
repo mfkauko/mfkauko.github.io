@@ -165,7 +165,7 @@ private boolean isStickyHeaderBeingPushedOffscreen(RecyclerView recyclerView, Vi
 getFirstViewUnobscuredByHeader(RecyclerView recyclerview, View header)， 返回的是没有被header遮挡的第一个child view。在最开始的时候，这个child view就是position为0的view。所以isStickyHeaderBeingPushedOffscreen会返回false，也就没有后续流程了。
 
 当滑动屏幕（recyclerview滑动）的时候，StickyRecyclerHeadersDecoration的onDrawOver函数会不停的被调用。所以会不停的循环，执行上面的流程。当我们滑动到两个header已经挨在一起的时候，比如类似下面图中的这种情况：
-![两个header贴在一起的情况](/images/posts/sticky/header.png)
+![两个header贴在一起的情况](https://github.com/mfkauko/mfkauko.github.io/blob/master/images/posts/stick/header.png)
 
 如果继续滑动，isStickyHeaderBeingPushedOffscreen会返回true，这个时候会去调用tranlateHeaderWithNextHeader方法。
 
