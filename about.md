@@ -18,7 +18,7 @@ title: 关于我
 
 <p>
 关于jekyll的搭建，看看参考
-<a target="_blank" href="baixin.io/2016/10/jekyll_tutorials1/"> Jekyll 搭建个人博客 </a>
+<a target="_blank" href="../2017/05/搭建jekyll博客/"> Jekyll 搭建个人博客 </a>
 教程
 
 
